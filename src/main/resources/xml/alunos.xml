@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<alunos>
+    <aluno cpf="808.738.005-32">
+        <nome>João Bento Roberto Almeida</nome>
+        <email>joao_bento_almeida@iedi.com.br</email>
+    </aluno>
+</alunos>
