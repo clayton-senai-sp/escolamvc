@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class NotasAlunos {
-
     @Id
     private Long id;
     private String disciplina;

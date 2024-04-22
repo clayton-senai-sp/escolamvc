@@ -5,6 +5,7 @@ import br.senai.sp.escolamvc.model.NotasAlunos;
 import br.senai.sp.escolamvc.repository.NotasAlunosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,5 +21,10 @@ public class NotasAlunosApiController {
     @GetMapping("/listar")
     public List<NotasAlunos> listar(){
         return notasAlunosRepository.findAll();
+    }
+
+    @PostMapping("/salvar")
+    public void salvar(NotasAlunos notasAlunos){
+        notasAlunosRepository.save(notasAlunos);
     }
 }
