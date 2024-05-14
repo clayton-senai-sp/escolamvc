@@ -2,6 +2,7 @@ package br.senai.sp.escolamvc.repository;
 
 import br.senai.sp.escolamvc.model.Aluno;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,6 +25,9 @@ public interface AlunoRepository extends JpaRepository<Aluno, Long> {
     // Pesquisa o cpf e o id seja diferente
     // do id que está sendo alterado
     Aluno findByCpfAndIdNot(String cpf, Long id);
+
+    // Pesquisa todos os alunos e retorna o id, nome, matricula e email
+
 
 
 }

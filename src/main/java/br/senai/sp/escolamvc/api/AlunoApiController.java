@@ -24,6 +24,8 @@ public class AlunoApiController {
         return alunoRepository.findAll();
     }
 
+
+
     @PostMapping("/inserir")
     public void inserir(@RequestBody Aluno aluno) {
         alunoRepository.save(aluno);
