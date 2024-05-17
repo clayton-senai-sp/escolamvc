@@ -26,7 +26,13 @@ public interface AlunoRepository extends JpaRepository<Aluno, Long> {
     // do id que está sendo alterado
     Aluno findByCpfAndIdNot(String cpf, Long id);
 
+    @Query("select id, nome, cpf, email, enderecoPessoa.id from Aluno")
+    List<Object[]> buscarAlunosParaApp();
+
     // Pesquisa todos os alunos e retorna o id, nome, matricula e email
+    //@Query("SELECT id, nome, cpf, email, enderecoPessoa.id FROM Aluno")
+    //List<Object[]> buscarAlunosParaApp();
+
 
 
 

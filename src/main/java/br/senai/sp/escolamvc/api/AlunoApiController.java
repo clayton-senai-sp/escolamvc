@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestClient;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/aluno")
@@ -24,7 +25,14 @@ public class AlunoApiController {
         return alunoRepository.findAll();
     }
 
-
+    @GetMapping("/buscaralunosparaapp")
+    public List<Object[]> buscarAlunosParaApp(){
+        return alunoRepository.buscarAlunosParaApp();
+    }
+    //@GetMapping("/buscaralunosparaapp")
+    //public List<Object[]> buscarAlunosParaApp() {
+        //return alunoRepository.buscarAlunosParaApp();
+    //}
 
     @PostMapping("/inserir")
     public void inserir(@RequestBody Aluno aluno) {
