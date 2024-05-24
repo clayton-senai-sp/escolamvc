@@ -26,13 +26,10 @@ public class AlunoApiController {
     }
 
     @GetMapping("/buscaralunosparaapp")
-    public List<Object[]> buscarAlunosParaApp(){
+    public List<Object> buscarAlunosParaApp(){
         return alunoRepository.buscarAlunosParaApp();
     }
-    //@GetMapping("/buscaralunosparaapp")
-    //public List<Object[]> buscarAlunosParaApp() {
-        //return alunoRepository.buscarAlunosParaApp();
-    //}
+
 
     @PostMapping("/inserir")
     public void inserir(@RequestBody Aluno aluno) {
