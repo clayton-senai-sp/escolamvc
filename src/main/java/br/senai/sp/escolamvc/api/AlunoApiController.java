@@ -25,7 +25,7 @@ public class AlunoApiController {
         return alunoRepository.findAll();
     }
 
-    @GetMapping("/buscaralunosparaapp")
+    @GetMapping("/listar")
     public List<Object> buscarAlunosParaApp(){
         return alunoRepository.buscarAlunosParaApp();
     }
