@@ -20,7 +20,7 @@ public class AlunoApiController {
 
     private RestClient restClient = RestClient.create();
 
-    @GetMapping("/listar")
+    @GetMapping("/listartodos")
     public List<Aluno> listar() {
         return alunoRepository.findAll();
     }
