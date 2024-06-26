@@ -12,4 +12,5 @@ public class AlunoDto {
     private String nome;
     private String cpf;
     private String email;
+    private Long matricula;
 }

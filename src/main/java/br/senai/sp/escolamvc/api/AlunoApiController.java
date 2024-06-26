@@ -4,21 +4,21 @@ package br.senai.sp.escolamvc.api;
 import br.senai.sp.escolamvc.model.Aluno;
 import br.senai.sp.escolamvc.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestClient;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/aluno")
 public class AlunoApiController {
-    @Autowired
-    private AlunoRepository alunoRepository;
+    private final AlunoRepository alunoRepository;
 
-    private RestClient restClient = RestClient.create();
+    private final RestClient restClient = RestClient.create();
+
+    public AlunoApiController(AlunoRepository alunoRepository) {
+        this.alunoRepository = alunoRepository;
+    }
 
     @GetMapping("/listartodos")
     public List<Aluno> listar() {
@@ -53,21 +53,19 @@ public class AlunoApiController {
     }
 
     @GetMapping("/client/listar")
-    public String alunosViaApi(Model model) {
+    public String alunosViaApi() {
 
         // Busca a lista de alunos via API
-        String alunos = restClient.get()
+        return restClient.get()
                 .uri("http://localhost/api/aluno/listar")
                 .retrieve()
                 .body(String.class);
-
-        return alunos;
     }
 
     @GetMapping("/client/inserir")
     public void inserirAlunoViaApi(Aluno aluno) {
         // Insere o aluno via API
-        ResponseEntity<Void> response = restClient.post()
+        restClient.post()
                 .uri("http://localhost/api/aluno/inserir")
                 .body(aluno)
                 .retrieve()
