@@ -30,7 +30,7 @@ public class SecurityConfig {
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring()
-                .requestMatchers(new AntPathRequestMatcher("/**"))
+                //.requestMatchers(new AntPathRequestMatcher("/**"))
                 .requestMatchers(new AntPathRequestMatcher("/h2-console/**"))
                 .requestMatchers(new AntPathRequestMatcher("/bootstrap5-3-2/**"))
                 .requestMatchers(new AntPathRequestMatcher("/css/**"))
